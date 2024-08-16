@@ -1,0 +1,22 @@
+.pro-card{
+  transition: all 0.3s ease-in-out;
+}
+
+.pro-card .main-img{
+  height: 350px;
+  transition: all 0.3s ease-in-out;
+}
+
+.pro-card .socials{
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.pro-card:hover .socials{
+  opacity: 100;
+}
+
+.pro-card:hover .main-img{
+  cursor: pointer;
+  height: 310px;
+}

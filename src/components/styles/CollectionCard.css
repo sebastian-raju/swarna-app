@@ -1,0 +1,31 @@
+.add-cart{
+  letter-spacing: 5px;
+  font-size: 11px;
+  opacity: 0;
+}
+
+.card-options{
+  opacity: 0;
+}
+
+.collection-card .add-cart,
+.collection-card .card-options{
+  transition: all 0.3s ease-in-out;
+}
+
+.collection-card:hover .add-cart,
+.collection-card:hover .card-options {
+  opacity: 100;
+}
+
+.collection-card{
+  transition: all 0.3s ease-in-out;
+}
+
+.collection-card:hover{
+  transform: scale(1.03)
+}
+
+.collection-card:hover{
+  cursor: pointer;
+}

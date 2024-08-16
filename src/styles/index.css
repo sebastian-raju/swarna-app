@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+
+  :root{
+    --font-family-main: "Marcellus", system-ui;
+    --text-h1: 60px;
+    --text-h1-lh: 80px;
+    --text-h2: 50px;
+    --text-h3: 40px;  
+    --text-h3-lh: 60px;
+    --text-h4: 25px;
+    --text-h6: 16px;
+    --text-h7: 15px;
+    --fs-button: 18px;
+    --fs-button-lh: 13px;
+    --fs-body: 16px;
+    --fs-body-lh: 30px;
+    --bg-main: rgb(245, 245, 245);
+    --bg-hero: rgb(221, 184, 146);
+  }
+  
+}
+
+
+.selection-container{
+  
+}
+
+/* WebKit browsers */
+.selection-container::-webkit-scrollbar {
+  height: 5px;
+}
+
+.selection-container::-webkit-scrollbar-track {
+  background: #ac815d3c;
+}
+
+.selection-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.526);
+  border-radius: 20px;
+}
+
+.selection-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+/* Firefox */
+/* .selection-container {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+} */
+
+
+/* Hide scrollbar arrows */
+.selection-container::-webkit-scrollbar-button:increment,
+.selection-container::-webkit-scrollbar-button:decrement {
+  display: none;
+}
+
+/* Hide scrollbar for Chrome, Safari, and Edge */
+.banner {
+  overflow: hidden; /* This will hide both scrollbars (horizontal and vertical) */
+}
+
+/* Alternatively, you can use these to hide just the scrollbar without removing scrolling functionality */
+.banner {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.banner::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+
+.each-company{
+  animation: scroll 10s linear infinite;
+}
+
+
+@keyframes scroll {
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+
+/* WebKit browsers */
+.trendy-collection::-webkit-scrollbar {
+  height: 5px;
+}
+
+.trendy-collection::-webkit-scrollbar-track {
+  background: #ac815d3c;
+}
+
+.trendy-collection::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.526);
+  border-radius: 20px;
+}
+
+.trendy-collection::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+/* Firefox
+.trendy-collection {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+} */
+
+
+/* Hide scrollbar arrows */
+.trendy-collection::-webkit-scrollbar-button:increment,
+.trendy-collection::-webkit-scrollbar-button:decrement {
+  display: none;
+}
+
+
+
+
+/* WebKit browsers */
+.blog-section::-webkit-scrollbar {
+  height: 5px;
+}
+
+.blog-section::-webkit-scrollbar-track {
+  background: #ac815d3c;
+}
+
+.blog-section::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.526);
+  border-radius: 20px;
+}
+
+.blog-section::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+  cursor: pointer;
+}
+
+/* Firefox
+.blog-section {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+} */
+
+
+/* Hide scrollbar arrows */
+.blog-section::-webkit-scrollbar-button:increment,
+.blog-section::-webkit-scrollbar-button:decrement {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+

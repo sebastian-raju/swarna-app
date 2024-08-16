@@ -1,0 +1,18 @@
+.view-more{
+  letter-spacing: 5px;
+  font-size: 11px;
+  opacity: 0;
+}
+
+.selection-card .view-more{
+  transition: all 0.3s ease-in-out;
+}
+
+.selection-card:hover .view-more {
+  opacity: 100;
+  cursor: pointer;
+}
+
+.selection-card:hover{
+  cursor: pointer;
+}
