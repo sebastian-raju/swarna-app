@@ -250,7 +250,7 @@ function HomePage() {
         </div>
         <div className="selection-container flex items-start gap-4 mt-[40px] overflow-x-scroll h-[500px] flex-nowrap overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
           
-          { productList.length < 0 ? 
+          { productList.length > 0 ? 
             productList.map(product => <SelectionCard key={product?.id} product={product}/>)
             :
             <>
