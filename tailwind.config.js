@@ -23,10 +23,10 @@ module.exports = {
         'marcellus':['Marcellus','system-ui']
       },
       backgroundColor:{
-        'main':"#FFF9F4",
+        'main':"rgb(255,249,244)",
         'sub':'rgb(246,241,235)',
-        'hero':"rgb(221, 184, 146)",
-        'footer':"rgb(14, 52, 61)"
+        'hero':"rgb(221,184,146)",
+        'footer':"rgb(14,52,61)"
       },
       maxWidth:{
         'container':'1280px'

@@ -250,10 +250,20 @@ function HomePage() {
         </div>
         <div className="selection-container flex items-start gap-4 mt-[40px] overflow-x-scroll h-[500px] flex-nowrap overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
           
-          { productList.length > 0 ? 
+          { productList.length < 0 ? 
             productList.map(product => <SelectionCard key={product?.id} product={product}/>)
             :
-            <div>Loading</div>
+            <>
+            <div className='w-[250px] h-[366px] bg-orange-100 flex-shrink-0'></div>
+            <div className='w-[250px] h-[250px] bg-orange-100  flex-shrink-0'></div>
+            <div className='w-[250px] h-[366px] bg-orange-100  flex-shrink-0'></div>
+            <div className='w-[250px] h-[250px] bg-orange-100  flex-shrink-0'></div>
+            <div className='w-[250px] h-[366px] bg-orange-100  flex-shrink-0'></div>
+            <div className='w-[250px] h-[250px] bg-orange-100  flex-shrink-0'></div>
+            <div className='w-[250px] h-[366px] bg-orange-100  flex-shrink-0'></div>
+            </>
+
+
           }
 
         </div>
@@ -475,7 +485,16 @@ function HomePage() {
             { productList.length > 0 ? 
               productList.map(product => <CollectionCard key={product?.id} product={product}/>)
               :
-              <div>Loading</div>
+              <>
+            <div className='col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start h-[500px] bg-orange-100'></div>
+            <div className='col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start h-[500px] bg-orange-100'></div>
+            <div className='col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start h-[500px] bg-orange-100'></div>
+            <div className='col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start h-[500px] bg-orange-100'></div>
+            <div className='col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start h-[500px] bg-orange-100'></div>
+            <div className='col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start h-[500px] bg-orange-100'></div>
+            <div className='col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start h-[500px] bg-orange-100'></div>
+            <div className='col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start h-[500px] bg-orange-100'></div>
+            </>
             }
 
           </div>
