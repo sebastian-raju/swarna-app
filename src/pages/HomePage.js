@@ -13,7 +13,7 @@ function HomePage() {
 
   const [productList, setProductList] = useState([]);
   const [trendyProducts, setTrendyProducts] = useState([]);
-  const islargeScreen = useMediaQuery('(min-width:450px)'); 
+  const islargeScreen = useMediaQuery('(min-width:500px)'); 
 
   useEffect(()=>{
     Aos.init();
