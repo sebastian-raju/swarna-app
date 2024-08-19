@@ -20,3 +20,42 @@
   cursor: pointer;
   height: 310px;
 }
+
+
+.bg-color{
+  background-color: rgb(71,32,0);
+  color: white;
+}
+
+
+.sub-title{
+  color: white !important;
+}
+
+
+.get-touch-container{
+  background-image: url('https://i.postimg.cc/9fLSmt3w/pixelcut-export-1.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.trendy-collection-container{
+  background-image: url('https://i.postimg.cc/jd7XT1Wn/newRose.jpg'); 
+  background-attachment: fixed;
+  background-repeat: "no-repeat";
+  background-position: 'center';
+  background-size:"cover";
+  min-height: 450px;
+}
+
+@media(max-width:400px){
+  .get-touch-container{
+    background-position-x: -70px;
+  }
+  .trendy-collection-container{
+    background-position-y: -150px;
+    background-position-x: -100px;
+    min-height: 400px;
+  }
+}

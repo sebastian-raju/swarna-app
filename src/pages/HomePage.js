@@ -6,12 +6,14 @@ import CollectionCard from '../components/CollectionCard';
 import TrendyCard from '../components/TrendyCard';
 import './styles/HomePage.css'
 import Aos from 'aos';
+import { useMediaQuery } from '@mui/material';
 
 
 function HomePage() {
 
   const [productList, setProductList] = useState([]);
   const [trendyProducts, setTrendyProducts] = useState([]);
+  const islargeScreen = useMediaQuery('(min-width:450px)'); 
 
   useEffect(()=>{
     Aos.init();
@@ -31,11 +33,37 @@ function HomePage() {
   },[])
 
 
+  const toggleButton = (button) => {
+    const jsButton = document.querySelector(button);
+      const allButtons = document.querySelectorAll('.button');
+      
+      if(jsButton.classList.contains('bg-color')){
+        return jsButton.classList.remove('bg-color');
+      }
+
+      allButtons.forEach(button => button.classList.remove('bg-color'));
+
+      jsButton.classList.add('bg-color');
+  }
+
+
 
   return (
     <>
+
+      {
+        islargeScreen === false &&
+        <div className="fixed bottom-[5px] left-[5px] right-[5px] bg-black z-50 rounded-md">
+            <div className='grid grid-cols-12 p-1 items-center'>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded-lg'><img src="./assets/icons/iso_search.svg" alt="" /></div>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded-lg'><img src="./assets/icons/whiteProfile.svg" alt="" /></div>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded-lg'><img src="./assets/icons/whiteWishlist.svg" alt="" /></div>
+            </div>
+        </div>
+      }
+
       {/* sub-navbar */}
-      <div className="w-[100%] flex justify-center items-center bg-black h-[70px] vsm:h-[50px] text-white z-10">
+      <div className="w-[100%] flex justify-center items-center bg-black h-[50px] vsm:h-[50px] text-white z-10">
         <div className="flex vsm:justify-between w-[100%] justify-center max-w-container px-[10px] items-center flex-wrap gap-[10px]">
           <div className="first-section flex gap-[50px]">
             <div className="social-media flex gap-[20px] items-center">
@@ -52,17 +80,17 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="second-section text-[12px] vsm:text-[14px]">
+          <div className="second-section hidden md:flex text-[12px] vsm:text-[14px]">
             Customer Support (+21 456 589 2369)
           </div>
         </div>
       </div>  
 
       {/* main-navbar */}
-      <section className=" w-[100%] z-10">
+      <section className=" w-[100%] z-10 sticky top-0">
         <nav className="navbar navbar-expand-lg" style={{backgroundColor:"rgb(255, 249, 244)"}}>
-          <div className="container-lg px-4 py-3 overflow-hidden" style={{backgroundColor:"rgb(255, 249, 244)"}}>
-            <a className="navbar-brand block mlg:hidden overflow-hidden" href="#home"><img src="./assets/logos/navLogo.svg" data-aos="zoom-out" data-aos-duration="1000" style={{width:"125px"}} alt=""/></a>
+          <div className="container-lg px-4 py-2 vsm:py-4 overflow-hidden" style={{backgroundColor:"rgb(255, 249, 244)"}}>
+            <a className="navbar-brand block mlg:hidden overflow-hidden" href="#home"><img src="./assets/logos/navLogo.svg" style={{width:"125px"}} alt=""/></a>
             <button className="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -84,10 +112,10 @@ function HomePage() {
                   <button className="btn btn-outline-success" type="submit">Search</button>
                 </form> */}
                 <div className='flex flex-col mlg:flex-row gap-[30px] items-start mlg:items-center'>
-                  <div className="nav-item flex items-center cursor-pointer gap-[15px]">
+                  {/* <div className="nav-item flex items-center cursor-pointer gap-[15px]">
                       <img src="./assets/icons/navSearch.svg" className='w-[15px]' alt="" />
                       <div className='text-body block mlg:hidden'>Search</div>
-                    </div>
+                    </div> */}
                     <div className="nav-item flex items-center cursor-pointer gap-[15px]">
                       <img src="./assets/icons/profile.svg" className='w-[15px] h-[16px]' alt="" />
                       <div className='text-body block mlg:hidden'>Profile</div>
@@ -174,7 +202,7 @@ function HomePage() {
       </div>
   
   
-      <div className="main-hero-section px-[30px] vsm:px-[50px] pb-[50px] pt-[70px] mlg:pt-[30px] w-[100%] flex flex-col items-center justify-center relative">
+      <div className="main-hero-section px-[30px] vsm:px-[50px] pb-[50px] pt-[50px] vsm:pt-[70px] mlg:pt-[30px] w-[100%] flex flex-col items-center justify-center relative">
         <div className="w-[100%] max-w-container grid grid-cols-12 items-center">
           <div className="col-span-12 mlg:col-span-8 translate-y-[-10px]">
             <div className="w-[100%] grid grid-cols-12 items-end gap-[25px] md:gap-[50px] overflow-hidden">
@@ -227,11 +255,14 @@ function HomePage() {
         </div>
   
         <div className="absolute bottom-[115px] vsm:bottom-[95px] left-[17%] vsm:left-[20%]">
-          <img src="./assets/shapes/glitter.svg" className="w-[70px] h-[70px]" alt=""/>
+          {/* <img src="./assets/shapes/glitter.svg" className="w-[70px] h-[70px]" alt=""/> */}
+          <img src="./assets/images/picmixmaker.gif" className='w-[120px] h-[100px]' alt="" />
+          {/* <img src="./assets/images/sparkle.gif" className='w-[90px] h-[70px]' alt="" /> */}
         </div>
   
-        <div className="absolute top-[27px] md:top-[20px] right-[10%] md:right-[25%]">
-          <img src="./assets/shapes/verticalStar.svg" className="w-[80px] h-[80px]" alt=""/>
+        <div className="absolute top-[27px] md:top-[20px] right-[10%] md:right-[26%]">
+          {/* <img src="./assets/shapes/verticalStar.svg" className="w-[80px] h-[80px]" alt=""/> */}
+          <img src="./assets/images/sparkle.gif" className='w-[150px] h-[120px]' alt="" />
         </div>
   
       </div>
@@ -248,7 +279,7 @@ function HomePage() {
         <div className="mt-[10px] text-[28px] vsm:text-heading vsm:leading-[40px]">
           Our selection of Jewellery
         </div>
-        <div className="selection-container flex items-start gap-4 mt-[40px] overflow-x-scroll h-[500px] flex-nowrap overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
+        <div className="selection-container flex items-start gap-4 mt-[40px] overflow-x-scroll h-[500px] flex-nowrap" data-aos="zoom-in" data-aos-duration="1000">
           
           { productList.length > 0 ? 
             productList.map(product => <SelectionCard key={product?.id} product={product}/>)
@@ -433,35 +464,35 @@ function HomePage() {
         <div className="py-[20px] flex items-center flex-nowrap overflow-x-scroll banner">
             <div className="text-white flex-shrink-0 px-[20px] flex gap-[10px] item-center">
               <div className="self-center text-[19px]">Pearl Earrings</div>
-              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[-15px]">Shop The collections</button>
-              <img src="./assets/shapes/star.svg" className="w-[30px] ms-[10px]" alt=""/>
+              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[1px]">Shop The collections</button>
+              <img src="./assets/images/picmixmaker.gif" className='w-[65px] h-[65px]' alt="" />
             </div>
             <div className="text-white flex-shrink-0 px-[20px] flex gap-[10px] item-center">
               <div className="self-center text-[19px]">Pearl Earrings</div>
-              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[-15px]">Shop The collections</button>
-              <img src="./assets/shapes/star.svg" className="w-[30px] ms-[10px]" alt=""/>
+              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[1px]">Shop The collections</button>
+              <img src="./assets/images/picmixmaker.gif" className='w-[65px] h-[65px]' alt="" />
             </div>
             <div className="text-white flex-shrink-0 px-[20px] flex gap-[10px] item-center">
               <div className="self-center text-[19px]">Pearl Earrings</div>
-              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[-15px]">Shop The collections</button>
-              <img src="./assets/shapes/star.svg" className="w-[30px] ms-[10px]" alt=""/>
+              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[1px]">Shop The collections</button>
+              <img src="./assets/images/picmixmaker.gif" className='w-[65px] h-[65px]' alt="" />
             </div>
             <div className="text-white flex-shrink-0 px-[20px] flex gap-[10px] item-center">
               <div className="self-center text-[19px]">Pearl Earrings</div>
-              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[-15px]">Shop The collections</button>
-              <img src="./assets/shapes/star.svg" className="w-[30px] ms-[10px]" alt=""/>
-            </div>
-
-            <div className="text-white flex-shrink-0 px-[20px] flex gap-[10px] item-center">
-              <div className="self-center text-[19px]">Pearl Earrings</div>
-              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[-15px]">Shop The collections</button>
-              <img src="./assets/shapes/star.svg" className="w-[30px] ms-[10px]" alt=""/>
+              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[1px]">Shop The collections</button>
+              <img src="./assets/images/picmixmaker.gif" className='w-[65px] h-[65px]' alt="" />
             </div>
 
             <div className="text-white flex-shrink-0 px-[20px] flex gap-[10px] item-center">
               <div className="self-center text-[19px]">Pearl Earrings</div>
-              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[-15px]">Shop The collections</button>
-              <img src="./assets/shapes/star.svg" className="w-[30px] ms-[10px]" alt=""/>
+              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[1px]">Shop The collections</button>
+              <img src="./assets/images/picmixmaker.gif" className='w-[65px] h-[65px]' alt="" />
+            </div>
+
+            <div className="text-white flex-shrink-0 px-[20px] flex gap-[10px] item-center">
+              <div className="self-center text-[19px]">Pearl Earrings</div>
+              <button className="bg-white px-3 py-1 text-black text-[11px] self-start translate-y-[1px]">Shop The collections</button>
+              <img src="./assets/images/picmixmaker.gif" className='w-[65px] h-[65px]' alt="" />
             </div>
             
         </div>
@@ -474,9 +505,12 @@ function HomePage() {
           <div className="text-body text-center" style={{letterSpacing: "7px"}}>NEW JEWELLERY</div>
           <div className="text-[28px] vsm:text-heading text-center mt-[5px]">Gold & Diamond Jewel Collection</div>
           <div className="mt-[35px] flex justify-center gap-[15px] w-[100%]">
-            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body bg-transparent border border-black py-2 text-black flex justify-center text-center items-center hover:bg-[#472000] transition-all delay-[30ms]">Traditional Jewels</button>
-            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body bg-[#472000] border border-black py-2 text-white flex justify-center text-center items-center">Bridal Jewels</button>
-            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body bg-transparent border border-black py-2 text-black flex justify-center text-center items-center hover:bg-[#472000] transition-all delay-[30ms]">Antique Jewels</button>
+            
+            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body border border-black py-2 flex justify-center text-center items-center traditional button" onClick={()=>{toggleButton(".traditional")}}>Traditional Jewels</button>
+
+            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body border bg-color border-black py-2 flex justify-center text-center items-center bridal button" onClick={()=>{toggleButton(".bridal")}}>Bridal Jewels</button>
+
+            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body border border-black py-2 flex justify-center text-center items-center antique button" onClick={()=>{toggleButton(".antique")}}>Antique Jewels</button>
           </div>
 
           <div className="grid grid-cols-12 gap-y-[60px] gap-[28px] mt-[50px] vsm:mt-[80px] w-[100%]">
@@ -515,7 +549,7 @@ function HomePage() {
 
       {/* trendy collections */}
       <div className="w-[100%] grid grid-cols-12 bg-sub">
-        <div className='col-span-12 md:col-span-6 min-h-[450px]' style={{backgroundImage: "url('https://i.postimg.cc/jd7XT1Wn/newRose.jpg')", backgroundAttachment: "fixed", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize:"cover"}}>
+        <div className='col-span-12 md:col-span-6 trendy-collection-container'>
         </div>
 
         <div className="col-span-12 md:col-span-6">
@@ -632,7 +666,50 @@ function HomePage() {
 
           <div className="flex flex-nowrap overflow-x-scroll gap-[30px] pb-[60px] blog-section">
             <div className="flex-shrink-0 flex flex-col items-start overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
-              <img src="https://i.postimg.cc/bYKygW20/news1.avif" className="object-cover w-[280px] sm:w-[405px] h-[200px] sm:h-[300px]" alt=""/>
+              <div className='relative'>
+                <img src="https://i.postimg.cc/bYKygW20/news1.avif" className="object-cover w-[280px] sm:w-[405px] h-[200px] sm:h-[300px]" alt=""/>
+                <div className='absolute bottom-[12px] left-[12px] right-[12px] p-1.5 px-2 flex justify-start items-center gap-[15px] bg-opacity-35 bg-zinc-950 backdrop-filter backdrop-blur-[3px]'>
+                  <div className='w-[33px] h-[33px]'>
+                    <img src="https://i.postimg.cc/4x1FC0Mb/person1.jpg" className='rounded-full h-[100%] w-[100%] bg-cover' alt="" />
+                  </div>
+                 
+                  <div className='flex flex-col items-start'>
+                    <div className='text-[13px] font-semibold text-white'>By Adarsh</div>
+                    <div className='text-[11px] text-white'>Posted on 22.Dec 2023</div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-[10px] text-[17px] w-[280px] sm:w-[405px]">
+                Accessorize Your Life with Fierce Charisma
+              </div>
+              <div className="mt-[10px] text-body  w-[280px] sm:w-[405px]">
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+              </div>
+
+              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
+                <button className=" text-[12px] text-white">
+                  View All Products
+                </button>
+                <div className="flex justify-center items-center px-[7px] rounded-full py-[8px] bg-white text-black">
+                  <img src="./assets/shapes/blackRight.svg" className="w-[10px] text-black" alt=""/>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex-shrink-0 flex flex-col items-start overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
+              <div className='relative'>
+                <img src="https://i.postimg.cc/T1Xr3d5y/news2.jpg" className="object-cover w-[280px] sm:w-[405px] h-[200px] sm:h-[300px]" alt=""/>
+                <div className='absolute bottom-[12px] left-[12px] right-[12px] p-1.5 px-2 flex justify-start items-center gap-[15px] bg-opacity-35 bg-zinc-950 backdrop-filter backdrop-blur-[3px]'>
+                  <div className='w-[33px] h-[33px]'>
+                    <img src="https://i.postimg.cc/gj9KLyQ2/person4.jpg" className='rounded-full h-[100%] w-[100%] bg-cover' alt="" />
+                  </div>
+                 
+                  <div className='flex flex-col items-start'>
+                    <div className='text-[13px] font-semibold text-white'>By Adarsh</div>
+                    <div className='text-[11px] text-white'>Posted on 22.Dec 2023</div>
+                  </div>
+                </div>
+              </div>
               <div className="mt-[20px] text-[12px]" style={{letterSpacing:"2px"}}>
                 22.DEC.2023, By Rahmi
               </div>
@@ -654,7 +731,19 @@ function HomePage() {
             </div>
 
             <div className="flex-shrink-0 flex flex-col items-start overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
-              <img src="https://i.postimg.cc/T1Xr3d5y/news2.jpg" className="object-cover w-[280px] sm:w-[405px] h-[200px] sm:h-[300px]" alt=""/>
+              <div className='relative'>
+                <img src="https://i.postimg.cc/kMxQhbLW/news3.jpg" className="object-cover w-[280px] sm:w-[405px] h-[200px] sm:h-[300px]" alt=""/>
+                <div className='absolute bottom-[12px] left-[12px] right-[12px] p-1.5 px-2 flex justify-start items-center gap-[15px] bg-opacity-35 bg-zinc-950 backdrop-filter backdrop-blur-[3px]'>
+                  <div className='w-[33px] h-[33px]'>
+                    <img src="https://i.postimg.cc/gj9KLyQ2/person4.jpg" className='rounded-full h-[100%] w-[100%] bg-cover' alt="" />
+                  </div>
+                 
+                  <div className='flex flex-col items-start'>
+                    <div className='text-[13px] font-semibold text-white'>By Adarsh</div>
+                    <div className='text-[11px] text-white'>Posted on 22.Dec 2023</div>
+                  </div>
+                </div>
+              </div>
               <div className="mt-[20px] text-[12px]" style={{letterSpacing:"2px"}}>
                 22.DEC.2023, By Rahmi
               </div>
@@ -676,29 +765,19 @@ function HomePage() {
             </div>
 
             <div className="flex-shrink-0 flex flex-col items-start overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
-              <img src="https://i.postimg.cc/kMxQhbLW/news3.jpg" className="object-cover w-[280px] sm:w-[405px] h-[200px] sm:h-[300px]" alt=""/>
-              <div className="mt-[20px] text-[12px]" style={{letterSpacing:"2px"}}>
-                22.DEC.2023, By Rahmi
-              </div>
-              <div className="mt-[10px] text-[17px] w-[280px] sm:w-[405px]">
-                Accessorize Your Life with Fierce Charisma
-              </div>
-              <div className="mt-[10px] text-body  w-[280px] sm:w-[405px]">
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-              </div>
-
-              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
-                <button className=" text-[12px] text-white">
-                  View All Products
-                </button>
-                <div className="flex justify-center items-center px-[7px] rounded-full py-[8px] bg-white text-black">
-                  <img src="./assets/shapes/blackRight.svg" className="w-[10px] text-black" alt=""/>
+              <div className='relative'>
+                <img src="https://i.postimg.cc/dt68JKs1/news4.jpg" className="object-cover w-[280px] sm:w-[405px] h-[200px] sm:h-[300px]" alt=""/>
+                <div className='absolute bottom-[12px] left-[12px] right-[12px] p-1.5 px-2 flex justify-start items-center gap-[15px] bg-opacity-35 bg-zinc-950 backdrop-filter backdrop-blur-[3px]'>
+                  <div className='w-[33px] h-[33px]'>
+                    <img src="https://i.postimg.cc/gj9KLyQ2/person4.jpg" className='rounded-full h-[100%] w-[100%] bg-cover' alt="" />
+                  </div>
+                 
+                  <div className='flex flex-col items-start'>
+                    <div className='text-[13px] font-semibold text-white'>By Adarsh</div>
+                    <div className='text-[11px] text-white'>Posted on 22.Dec 2023</div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div className="flex-shrink-0 flex flex-col items-start overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
-              <img src="https://i.postimg.cc/dt68JKs1/news4.jpg" className="object-cover w-[280px] sm:w-[405px] h-[200px] sm:h-[300px]" alt=""/>
               <div className="mt-[20px] text-[12px]" style={{letterSpacing:"2px"}}>
                 22.DEC.2023, By Rahmi
               </div>
@@ -728,28 +807,28 @@ function HomePage() {
       <div className="w-[100%] bg-[#FFFFFF] flex justify-center pt-[50px] pb-[50px] px-[24px] vsm:px-[50px]">
         <div className="w-[100%] max-w-container ">
           <div className="grid grid-cols-12 items-center gap-y-[20px] mlg:gap-[0px]">
-            <div className="pe-[0px] py-[15px] border-r-0  vsm:pe-[30px] vsm:py-[0px] col-span-12 vsm:col-span-6 mlg:col-span-3 vsm:border-r border-black flex items-center gap-[20px] justify-center overflow-hidden" data-aos="flip-up" data-aos-duration="300">
+            <div className="pe-[0px] py-[15px] border-r-0  vsm:pe-[30px] vsm:py-[0px] col-span-12 vsm:col-span-6 mlg:col-span-3 vsm:border-r border-black flex items-center gap-[20px] justify-center overflow-hidden" data-aos="fade-left" data-aos-duration="300">
               <img src="./assets/icons/reward.svg" className="w-[40px] h-[40px]" alt=""/>
               <div className="min-w-[107px]">
                 <div className="text-[14px] mb-[5px]">Reward Program</div>
                 <div className="text-[10px]">Morbi tristique felis.</div>
               </div>
             </div>
-            <div className="px-[0px] py-[15px] vsm:ps-[30px] mlg:px-[30px] col-span-12 vsm:col-span-6 mlg:col-span-3 border-r-0 mlg:border-r border-black flex items-center justify-center gap-[20px] overflow-hidden" data-aos="flip-down" data-aos-duration="300">
+            <div className="px-[0px] py-[15px] vsm:ps-[30px] mlg:px-[30px] col-span-12 vsm:col-span-6 mlg:col-span-3 border-r-0 mlg:border-r border-black flex items-center justify-center gap-[20px] overflow-hidden" data-aos="fade-left" data-aos-duration="300">
               <img src="./assets/icons/discount.svg" className="w-[40px] h-[40px]" alt="" />
               <div className="min-w-[107px]">
                 <div className="text-[14px] mb-[5px]">Special Discounts</div>
                 <div className="text-[10px]">Morbi tristique felis.</div>
               </div>
             </div>
-            <div className=" vsm:pe-[30px] px-[0px] py-[15px] mlg:px-[30px] col-span-12 vsm:col-span-6 mlg:col-span-3 border-r-0 vsm:border-r border-black flex items-center justify-center gap-[20px] overflow-hidden" data-aos="flip-up" data-aos-duration="300">
+            <div className=" vsm:pe-[30px] px-[0px] py-[15px] mlg:px-[30px] col-span-12 vsm:col-span-6 mlg:col-span-3 border-r-0 vsm:border-r border-black flex items-center justify-center gap-[20px] overflow-hidden" data-aos="fade-left" data-aos-duration="300">
               <img src="./assets/icons/shipping.svg" className="w-[50px] h-[40px]" alt=""/>
               <div className="min-w-[107px]">
                 <div className="text-[14px] mb-[5px]">Fast shipping</div>
                 <div className="text-[10px]">Morbi tristique felis.</div>
               </div>
             </div>
-            <div className="px-[0px] py-[15px] vsm:ps-[30px] col-span-12 vsm:col-span-6 mlg:col-span-3 flex items-center gap-[20px] justify-center overflow-hidden" data-aos="flip-down" data-aos-duration="300">
+            <div className="px-[0px] py-[15px] vsm:ps-[30px] col-span-12 vsm:col-span-6 mlg:col-span-3 flex items-center gap-[20px] justify-center overflow-hidden" data-aos="fade-left" data-aos-duration="300">
               <img src="./assets/icons/greatPrices.svg" className="w-[40px] h-[40px]" alt=""/>
               <div className="min-w-[107px]">
                 <div className="text-[14px] mb-[5px]">Great prices</div>
@@ -762,25 +841,25 @@ function HomePage() {
 
 
       {/* get in touch today */}
-      <div className="w-[100%] grid grid-cols-12 bg-main">
-        <div className='col-span-12 md:col-span-6 min-h-[300px] vsm:min-h-[450px]' style={{backgroundImage: "url('https://i.postimg.cc/G24RJxLS/new.avif')", backgroundAttachment: "fixed", backgroundRepeat: "no-repeat", backgroundPositionX:"-20px", backgroundOrigin:"content-box", backgroundSize:"cover"}}>
+      <div className="w-[100%] grid grid-cols-12 bg-main get-touch-container">
+        <div className='col-span-12 md:col-span-6 min-h-[300px] vsm:min-h-[450px]' >
         </div>
 
-        <div className="col-span-12 md:col-span-6">
-          <div className="py-[70px] px-[30px] md:p-[70px]">
-            <div className="text-heading leading-[30px]">
+        <div className="col-span-12 md:col-span-6 bg-opacity-35 bg-zinc-900 backdrop-filter backdrop-blur-[5px]">
+          <div className="py-[70px] px-[30px] md:p-[70px] text-white">
+            <div className="text-heading leading-[30px]  ">
               Get In Touch Today!
             </div>
 
-            <div className='text-body mt-[15px]'>
+            <div className='sub-title text-body mt-[15px]'>
               Cras convallis a augue non ullamcorper. Maecenas nec tempor nulla, nec semper mauris. In vitae urna justo. Quisque at nulla pellentesque.
             </div>
 
             <div className='mt-[30px] flex flex-col gap-[20px]'>
-              <input type="text" placeholder='Name' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-body bg-[#F5E7D6] outline-none cursor-text' />
-              <input type="text" placeholder='Phone Number' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-body bg-[#F5E7D6] outline-none cursor-text'/>
-              <input type='text' placeholder='Date' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-body bg-[#F5E7D6] outline-none cursor-text'/>
-              <textarea type="text" rows={5} placeholder='Message' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-body bg-[#F5E7D6] outline-none cursor-text'/> 
+              <input type="text" placeholder='Name' name="" id="" className='w-[100%] px-[15px] py-[10px] bg-transparent placeholder:text-white shadow-[inset_0_0px_15px_rgba(0,0,0,0.3)] placeholder:text-[13px] outline-none cursor-text rounded-md' />
+              <input type="text" placeholder='Phone Number' name="" id="" className='w-[100%] px-[15px] py-[10px] bg-transparent placeholder:text-white shadow-[inset_0_0px_15px_rgba(0,0,0,0.3)] placeholder:text-[13px] outline-none cursor-text rounded-md'/>
+              <input type='text' placeholder='Date' name="" id="" className='w-[100%] px-[15px] py-[10px] bg-transparent placeholder:text-white shadow-[inset_0_0px_15px_rgba(0,0,0,0.3)] placeholder:text-[13px] outline-none cursor-text rounded-md'/>
+              <textarea type="text" rows={5} placeholder='Message' name="" id="" className='w-[100%] px-[15px] py-[10px] bg-transparent placeholder:text-white shadow-[inset_0_0px_15px_rgba(0,0,0,0.3)] placeholder:text-[13px] outline-none cursor-text rounded-md'/> 
             </div>
             
             <div className="mt-[20px] vsm:max-w-[190px] flex justify-center vsm:justify-start items-center gap-2 bg-black py-[13px] px-[30px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
@@ -858,21 +937,21 @@ function HomePage() {
                 </div>
               </div>
   
-              <div className='col-span-12 mlg:col-span-4' data-aos="flip-up" data-aos-duration="1000">
-                <div className="selection-subheading text-[12px]" style={{letterSpacing:"7px"}}>
+              <div className='col-span-12 mlg:col-span-4'>
+                <div className="selection-subheading text-[12px]" data-aos="fade-left" data-aos-duration="1000" style={{letterSpacing:"7px"}}>
                   NEWSLETTER
                 </div>
-                <div className="mt-[10px] text-[40px] leading-[40px] w-[100%] mlg:max-w-[420px]">
+                <div className="mt-[10px] text-[40px] leading-[40px] w-[100%] mlg:max-w-[420px]" data-aos="fade-left" data-aos-duration="1000">
                   Join Today
                 </div> 
                 <div className='footer-input mt-[18px] relative w-[100%]'>
-                  <input type="text" className='ps-[23px] py-[14px] w-[100%] bg-transparent border border-white placeholder:text-body rounded-full outline-none' placeholder='Enter Your Mail Id Here' name="" id="" />
+                  <input type="text" className='ps-[23px] py-[14px] w-[100%] bg-transparent border border-white placeholder:text-body rounded-full outline-none' placeholder='Enter Your Mail Id Here' name="" id="" data-aos="fade-left" data-aos-duration="1000"/>
                   <div className='absolute right-[7px] top-[7px] flex justify-center items-center bg-white px-[10px] py-[12px] rounded-full'>
                     <img src="./assets/shapes/send.svg" className='w-[20px]' alt="" />
                   </div>
                 </div>
 
-                <div className='mt-[18px] text-[12px]'>
+                <div className='mt-[18px] text-[12px]' data-aos="fade-left" data-aos-duration="1000">
                   I agree with the <span className='font-semibold underline'>terms & conditions</span>
                 </div>
 
