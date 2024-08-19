@@ -3,32 +3,6 @@
 @tailwind utilities;
 
 
-@layer base{
-
-  :root{
-    --font-family-main: "Marcellus", system-ui;
-    --text-h1: 60px;
-    --text-h1-lh: 80px;
-    --text-h2: 50px;
-    --text-h3: 40px;  
-    --text-h3-lh: 60px;
-    --text-h4: 25px;
-    --text-h6: 16px;
-    --text-h7: 15px;
-    --fs-button: 18px;
-    --fs-button-lh: 13px;
-    --fs-body: 16px;
-    --fs-body-lh: 30px;
-    --bg-main: rgb(245, 245, 245);
-    --bg-hero: rgb(221, 184, 146);
-  }
-  
-}
-
-
-.selection-container{
-  
-}
 
 /* WebKit browsers */
 .selection-container::-webkit-scrollbar {

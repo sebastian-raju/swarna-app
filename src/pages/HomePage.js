@@ -36,7 +36,7 @@ function HomePage() {
     <>
       {/* sub-navbar */}
       <div className="w-[100%] flex justify-center items-center bg-black h-[70px] vsm:h-[50px] text-white z-10">
-        <div className="flex vsm:justify-between w-[100%] justify-center max-w-[1280px] px-[10px] items-center flex-wrap gap-[10px]">
+        <div className="flex vsm:justify-between w-[100%] justify-center max-w-container px-[10px] items-center flex-wrap gap-[10px]">
           <div className="first-section flex gap-[50px]">
             <div className="social-media flex gap-[20px] items-center">
               <img src="./assets/icons/threads.svg" className="vsm:w-[15px] vsm:h-[15px] w-[14px] h-[14px]" alt=""/>
@@ -46,9 +46,9 @@ function HomePage() {
               <img src="./assets/icons/twitter.svg" className="vsm:w-[15px] vsm:h-[15px] w-[14px] h-[14px]" alt=""/>
             </div>
             <div className="sub-navbar-options hidden lg:flex gap-[50px]  lg:text-[14px] ">
-              <div>My Account</div>
-              <div>Wishlist</div>
-              <div>Support</div>
+              <div className='text-white hover:text-gray-300 transition-all delay-[30ms] cursor-pointer'>My Account</div>
+              <div className='text-white hover:text-gray-300 transition-all delay-[30ms] cursor-pointer'>Wishlist</div>
+              <div className='text-white hover:text-gray-300 transition-all delay-[30ms] cursor-pointer'>Support</div>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ function HomePage() {
               <div className="w-[100%] flex flex-col px-[30px] mlg:px-[0px] mt-[20px] mlg:mt-[0px]  gap-[20px] mlg:gap-[0px] items-start mlg:items-center mlg:flex-row mlg:justify-between">
                 <div className="navbar-nav w-[100%] mlg:max-w-[340px] flex-grow  items-center pe-3">
                   <div className="d-flex w-[100%] mlg:max-w-[340px] align-items-center relative" role="search">
-                  <input className="w-[100%] placeholder:text-[12px] py-2 px-4 ring-1 ring-slate-950/5 rounded-full" type="search" placeholder="Search Products" aria-label="Search"/>
+                  <input className="w-[100%] placeholder:text-[12px] py-2 px-4 ring-1 ring-slate-950/5 rounded-full outline-none cursor-pointer" type="search" placeholder="Search Products" aria-label="Search"/>
                   <div className='absolute right-[15px]'><img src="./assets/icons/search.svg" className='w-[18px]' alt="" /></div>
                 </div>
                 </div>
@@ -84,20 +84,20 @@ function HomePage() {
                   <button className="btn btn-outline-success" type="submit">Search</button>
                 </form> */}
                 <div className='flex flex-col mlg:flex-row gap-[30px] items-start mlg:items-center'>
-                  <div className="nav-item flex items-center gap-[15px]">
+                  <div className="nav-item flex items-center cursor-pointer gap-[15px]">
                       <img src="./assets/icons/navSearch.svg" className='w-[15px]' alt="" />
-                      <div className='text-[13px] block mlg:hidden'>Search</div>
+                      <div className='text-body block mlg:hidden'>Search</div>
                     </div>
-                    <div className="nav-item flex items-center gap-[15px]">
+                    <div className="nav-item flex items-center cursor-pointer gap-[15px]">
                       <img src="./assets/icons/profile.svg" className='w-[15px] h-[16px]' alt="" />
-                      <div className='text-[13px] block mlg:hidden'>Profile</div>
+                      <div className='text-body block mlg:hidden'>Profile</div>
                     </div>
-                    <div className="nav-item flex items-center gap-[15px]">
+                    <div className="nav-item flex items-center cursor-pointer gap-[15px]">
                       <img src="./assets/icons/wishlist.svg" className='w-[15px]' alt="" />
-                      <div className='text-[13px] block mlg:hidden'>Wishlist</div>
+                      <div className='text-body block mlg:hidden'>Wishlist</div>
                     </div>
                     <div className="nav-item">
-                      <button className='px-4 py-[13px] bg-[#AC805D] text-white text-[14px]'>Get Special Offers</button>
+                      <button className='px-4 py-[13px] bg-[#AC805D] text-white text-[14px] hover:bg-[#8d613b] transition-all delay-[30ms]'>Get Special Offers</button>
                     </div>
                 </div>
               </div>
@@ -175,7 +175,7 @@ function HomePage() {
   
   
       <div className="main-hero-section px-[30px] vsm:px-[50px] pb-[50px] pt-[70px] mlg:pt-[30px] w-[100%] flex flex-col items-center justify-center relative">
-        <div className="w-[100%] max-w-[1280px] grid grid-cols-12 items-center">
+        <div className="w-[100%] max-w-container grid grid-cols-12 items-center">
           <div className="col-span-12 mlg:col-span-8 translate-y-[-10px]">
             <div className="w-[100%] grid grid-cols-12 items-end gap-[25px] md:gap-[50px] overflow-hidden">
               <div className="col-span-12 vsm:col-span-6 sm:col-span-5 md:col-span-4 flex items-start rounded-t-full rounded-b-full overflow-hidden" data-aos="fade-right" data-aos-duration="1000">
@@ -185,7 +185,7 @@ function HomePage() {
                 <div className="hero-sub-heading text-[11px] text-black" style={{letterSpacing:"10px"}}>
                   GLAMOROUS LIFE
                 </div>
-                <div className="hero-heading text-[30px] sm:text-h3 leading-[40px] sm:leading-lh-h3">
+                <div className="hero-heading text-heading sm:text-[40px] leading-[40px] sm:leading-[60px]">
                   Redefining Elegance with
                   Unique Charms
                 </div>
@@ -193,14 +193,14 @@ function HomePage() {
                   Vestibulum augue nibh, elementum eget ante nec, consectetur viverra leo. Curabitur sit amet dignissim erat. Aenean fringilla pretium elit, et eleifend orci cursus.
                 </div>
   
-                <div className="mt-[20px] flex items-center gap-2 bg-white py-[13px] px-[30px]">
-                  <button className=" text-[14px]">
+                <button className="mt-[20px] flex items-center gap-2 bg-white hover:bg-slate-200 transition-all delay-[30ms] py-[13px] px-[30px] cursor-pointer">
+                  <div className=" text-[14px]">
                     Know More
-                  </button>
+                  </div>
                   <div className="flex justify-center items-center px-[7px] rounded-full py-[8px] bg-black text-white">
                     <img src="./assets/shapes/right.svg" className="w-[10px]" alt=""/>
                   </div>
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -217,11 +217,11 @@ function HomePage() {
             </div>
           </div>
         </div>
-         <div className="mt-[60px] w-[100%] max-w-[1280px] grid grid-cols-12 items-center">
+         <div className="mt-[60px] w-[100%] max-w-container grid grid-cols-12 items-center">
           <div className="col-span-12 mlg:col-span-8 text-[12px] flex mlg:justify-start justify-center mb-[20px] mlg:mb-[0px] items-center gap-3 mlg:ps-[60px]">
             <span><img src="./assets//shapes/longLeft.svg" alt=""/></span> 1/4 <span><img src="./assets//shapes/longRight.svg" alt=""/></span>
           </div>
-          <div className="col-span-12 mlg:col-span-4 text-[13px] flex mlg:justify-start justify-center">
+          <div className="col-span-12 mlg:col-span-4 text-body flex mlg:justify-start justify-center">
             Vestibulum augue nibh, elementum eget ante nec, consectetur viverra leo.
           </div>
         </div>
@@ -240,12 +240,12 @@ function HomePage() {
 
     {/* our selection of jewellery */}
 
-    <div className="w-[100%] px-[50px] flex justify-center items-center flex-col bg-[#FFF9F4]">
-      <div className="w-[100%] max-w-[1280px] mt-[100px]">
+    <div className="w-[100%] px-[50px] flex justify-center items-center flex-col bg-main">
+      <div className="w-[100%] max-w-container mt-[100px]">
         <div className="selection-subheading text-[11px]" style={{letterSpacing:"5px"}}>
           OUR CATEGORIES WORK
         </div>
-        <div className="mt-[10px] text-[28px] vsm:text-[32px] vsm:leading-[40px]">
+        <div className="mt-[10px] text-[28px] vsm:text-heading vsm:leading-[40px]">
           Our selection of Jewellery
         </div>
         <div className="selection-container flex items-start gap-4 mt-[40px] overflow-x-scroll h-[500px] flex-nowrap overflow-hidden" data-aos="zoom-in" data-aos-duration="1000">
@@ -263,9 +263,9 @@ function HomePage() {
 
     {/* company logos */}
 
-    <div className="w-[100%] vsm:px-[50px] flex justify-center items-center bg-[#FFF9F4]">
-      <div  className="w-[100%] vsm:max-w-[1280px] overflow-hidden" >
-        <div className="companies-row w-[100%] max-w-[1280px] mt-[70px] overflow-hidden select-none mb-[70px]" data-aos="fade-right" data-aos-duration="1000">
+    <div className="w-[100%] vsm:px-[50px] flex justify-center items-center bg-main">
+      <div  className="w-[100%] vsm:max-w-container overflow-hidden" >
+        <div className="companies-row w-[100%] max-w-container mt-[70px] overflow-hidden select-none mb-[70px]" data-aos="fade-right" data-aos-duration="1000">
             {/* <div className="each-company flex justify-between gap-4 items-center flex-shrink-0 min-w-[100%]">
               <img src="./assets/logos/maskan.svg" class="w-[135px]" alt=""/>
         
@@ -316,15 +316,15 @@ function HomePage() {
 
 
     {/* features grid */}
-    <div className="w-[100%] border-t border-b border-r-0 border-l-0 border-black flex justify-center bg-[#FFF9F4]">
-      <div className="w-[100%] max-w-[1280px] grid grid-cols-12">
+    <div className="w-[100%] border-t border-b border-r-0 border-l-0 border-black flex justify-center bg-main">
+      <div className="w-[100%] max-w-container grid grid-cols-12">
         <div className="col-span-12 md:col-span-3 h-[100%] border-b border-r-0 md:border-b-0 md:border-r border-black p-5 relative" >
           <div className="text-[23px]">
             100
             <br/>
             Happy Customers
           </div>
-          <div className="text-[13px] mt-[8px]">
+          <div className="text-body mt-[8px]">
             Where Elegance Finds Its Extraordinary Artistry
             Who Crave a One-of-a-Kind Sparkle.
           </div>
@@ -336,7 +336,7 @@ function HomePage() {
             <br/>
             Business Owned          
           </div>
-          <div className="text-[13px] mt-[8px]">
+          <div className="text-body mt-[8px]">
             Captivatingly ClassNamey Jewelry for the Discerning
             Unveiling the Essence of Timelessness.
           </div>
@@ -348,7 +348,7 @@ function HomePage() {
             <br/>
             Blog Articles
           </div>
-          <div className="text-[13px] mt-[8px]">
+          <div className="text-body mt-[8px]">
             Exceptional Craftsmanship, Unparalleled Elegance
             Where Effortless Glamour Meets Class.
           </div>
@@ -360,7 +360,7 @@ function HomePage() {
             <br/>
             New Designs
           </div>
-          <div className="text-[13px] mt-[8px]">
+          <div className="text-body mt-[8px]">
             Accessorize Your Life with Fierce Charisma
             For Those Who Dare to Shine Bright.
           </div>
@@ -371,13 +371,13 @@ function HomePage() {
 
 
     {/* our recent products */}
-      <div className="w-[100%] flex justify-center pb-[80px] bg-[#F6F1EB]">
-        <div className="w-[100%] max-w-[1280px] grid grid-cols-12 pt-[100px] items-center mx-[50px]">
+      <div className="w-[100%] flex justify-center pb-[80px] bg-sub">
+        <div className="w-[100%] max-w-container grid grid-cols-12 pt-[100px] items-center mx-[50px]">
           <div className="col-span-12 mlg:col-span-7 flex flex-col items-start  py-[0px] pe-[0px] mlg:py-[40px] mlg:pe-[40px] ">
             <div className="selection-subheading text-[11px]" style={{letterSpacing:"5px"}}>
               OUR RECENT PRODUCTS
             </div>
-            <div className="mt-[10px] text-[26px] leading-[35px] vsm:text-[32px] vsm:leading-[40px] w-[100%] mlg:max-w-[420px]">
+            <div className="mt-[10px] text-[26px] leading-[35px] vsm:text-heading vsm:leading-[40px] w-[100%] mlg:max-w-[420px]">
                 Jewels Enhanced with rings, 
                 necklaces, earrings, bracelets,
                 and more.
@@ -390,7 +390,7 @@ function HomePage() {
                   Donec ac mi dui. Donec commodo ultrices elit eu sodales. 
                   Maecenas ut orci hendrerit.
                 </div>
-                <div className="mt-[20px] flex items-center gap-2 bg-black py-[13px] px-[30px] cursor-pointer">
+                <div className="mt-[20px] flex items-center gap-2 bg-black py-[13px] px-[30px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
                   <button className=" text-[14px] text-white">
                     Know More
                   </button>
@@ -459,14 +459,14 @@ function HomePage() {
 
 
       {/* gold and diamond jewel collection */}
-      <div className="w-[100%] flex flex-col items-center pt-[120px] bg-[#FFF9F4] pb-[120px]">
-        <div className="w-[100%] max-w-[1280px] px-6 flex flex-col items-center">
-          <div className="text-[13px] text-center" style={{letterSpacing: "7px"}}>NEW JEWELLERY</div>
-          <div className="text-[28px] vsm:text-[32px] text-center mt-[5px]">Gold & Diamond Jewel Collection</div>
+      <div className="w-[100%] flex flex-col items-center pt-[120px] bg-main pb-[120px]">
+        <div className="w-[100%] max-w-container px-6 flex flex-col items-center">
+          <div className="text-body text-center" style={{letterSpacing: "7px"}}>NEW JEWELLERY</div>
+          <div className="text-[28px] vsm:text-heading text-center mt-[5px]">Gold & Diamond Jewel Collection</div>
           <div className="mt-[35px] flex justify-center gap-[15px] w-[100%]">
-            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-[13px] bg-transparent border border-black py-2 text-black flex justify-center text-center items-center">Traditional Jewels</button>
-            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-[13px] bg-[#472000] border border-black py-2 text-white flex justify-center text-center items-center">Bridal Jewels</button>
-            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-[13px] bg-transparent border border-black py-2 text-black flex justify-center text-center items-center">Antique Jewels</button>
+            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body bg-transparent border border-black py-2 text-black flex justify-center text-center items-center hover:bg-[#472000] transition-all delay-[30ms]">Traditional Jewels</button>
+            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body bg-[#472000] border border-black py-2 text-white flex justify-center text-center items-center">Bridal Jewels</button>
+            <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body bg-transparent border border-black py-2 text-black flex justify-center text-center items-center hover:bg-[#472000] transition-all delay-[30ms]">Antique Jewels</button>
           </div>
 
           <div className="grid grid-cols-12 gap-y-[60px] gap-[28px] mt-[50px] vsm:mt-[80px] w-[100%]">
@@ -481,7 +481,7 @@ function HomePage() {
           </div>
 
           <div className="w-[100%] flex justify-center mt-[50px]">
-            <div className="mt-[20px] flex items-center gap-2 bg-black py-[13px] px-[30px]">
+            <div className="mt-[20px] flex items-center gap-2 bg-black py-[13px] px-[30px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
               <button className=" text-[14px] text-white">
                 View All Products
               </button>
@@ -495,7 +495,7 @@ function HomePage() {
 
 
       {/* trendy collections */}
-      <div className="w-[100%] grid grid-cols-12 bg-[#F6F1EB]">
+      <div className="w-[100%] grid grid-cols-12 bg-sub">
         <div className='col-span-12 md:col-span-6 min-h-[450px]' style={{backgroundImage: "url('https://i.postimg.cc/jd7XT1Wn/newRose.jpg')", backgroundAttachment: "fixed", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundSize:"cover"}}>
         </div>
 
@@ -504,7 +504,7 @@ function HomePage() {
             <div className="selection-subheading text-[11px] mb-[15px]" style={{letterSpacing: "5px"}}>
               OUR RECENT PRODUCTS
             </div>
-            <div className="text-[28px] vsm:text-[32px] leading-[30px]">
+            <div className="text-[28px] vsm:text-heading leading-[30px]">
               Trendy Design Collections
             </div>
 
@@ -526,10 +526,10 @@ function HomePage() {
 
 
       {/* our professional team */}
-      <div className="w-[100%] flex flex-col items-center px-[24px] sm:px-[50px] pt-[100px] pb-[120px] bg-[#FFF9F4]">
-        <div className="w-[100%] max-w-[1280px]">
-          <div className="text-[13px] text-center" style={{letterSpacing: "7px"}}>OUR TEAM MEMBERS</div>
-          <div className="text-[32px] text-center mt-[5px]">Our Professional Team</div>
+      <div className="w-[100%] flex flex-col items-center px-[24px] sm:px-[50px] pt-[100px] pb-[120px] bg-main">
+        <div className="w-[100%] max-w-container">
+          <div className="text-body text-center" style={{letterSpacing: "7px"}}>OUR TEAM MEMBERS</div>
+          <div className="text-heading text-center mt-[5px]">Our Professional Team</div>
 
           <div className="mt-[70px] grid grid-cols-12 gap-y-[50px] gap-[28px]">
             <div className="col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 pro-card">
@@ -593,17 +593,17 @@ function HomePage() {
       </div>
 
       {/* recent news and blogs */}
-      <div className="w-[100%] flex flex-col items-center px-[24px] sm:px-[50px] pt-[100px] pb-[120px] bg-[#F6F1EB]">
-        <div className="w-[100%] max-w-[1280px]">
+      <div className="w-[100%] flex flex-col items-center px-[24px] sm:px-[50px] pt-[100px] pb-[120px] bg-sub">
+        <div className="w-[100%] max-w-container">
           <div className="text-[10px] mb-[15px]" style={{letterSpacing:"5px"}}>NEWS UPDATES</div>
           <div className="w-[100%] grid grid-cols-12 items-center gap-[20px]">
             <div className="col-span-12 md:col-span-7">
-              <div className="text-[32px] w-[100%] md:max-w-[350px] leading-[40px]">
+              <div className="text-heading w-[100%] md:max-w-[350px] leading-[40px]">
                 Recent News  & Blogs 
                 Updates
               </div> 
             </div>
-            <div className="col-span-12 md:col-span-5 text-[13px]">
+            <div className="col-span-12 md:col-span-5 text-body">
               It is a long established fact that a reader will be distracted by the readable content of a page when looking at its 
               layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to 
               using 'Content here, content here', making it look like readable English. Many desktop publishing packages
@@ -620,11 +620,11 @@ function HomePage() {
               <div className="mt-[10px] text-[17px] w-[280px] sm:w-[405px]">
                 Accessorize Your Life with Fierce Charisma
               </div>
-              <div className="mt-[10px] text-[13px]  w-[280px] sm:w-[405px]">
+              <div className="mt-[10px] text-body  w-[280px] sm:w-[405px]">
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </div>
 
-              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px]">
+              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
                 <button className=" text-[12px] text-white">
                   View All Products
                 </button>
@@ -642,11 +642,11 @@ function HomePage() {
               <div className="mt-[10px] text-[17px] w-[280px] sm:w-[405px]">
                 Accessorize Your Life with Fierce Charisma
               </div>
-              <div className="mt-[10px] text-[13px]  w-[280px] sm:w-[405px]">
+              <div className="mt-[10px] text-body  w-[280px] sm:w-[405px]">
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </div>
 
-              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px]">
+              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
                 <button className=" text-[12px] text-white">
                   View All Products
                 </button>
@@ -664,11 +664,11 @@ function HomePage() {
               <div className="mt-[10px] text-[17px] w-[280px] sm:w-[405px]">
                 Accessorize Your Life with Fierce Charisma
               </div>
-              <div className="mt-[10px] text-[13px]  w-[280px] sm:w-[405px]">
+              <div className="mt-[10px] text-body  w-[280px] sm:w-[405px]">
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </div>
 
-              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px]">
+              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
                 <button className=" text-[12px] text-white">
                   View All Products
                 </button>
@@ -686,11 +686,11 @@ function HomePage() {
               <div className="mt-[10px] text-[17px] w-[280px] sm:w-[405px]">
                 Accessorize Your Life with Fierce Charisma
               </div>
-              <div className="mt-[10px] text-[13px]  w-[280px] sm:w-[405px]">
+              <div className="mt-[10px] text-body  w-[280px] sm:w-[405px]">
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </div>
 
-              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px]">
+              <div className="mt-[20px] flex items-center gap-2 bg-black py-[10px] px-[15px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
                 <button className=" text-[12px] text-white">
                   View All Products
                 </button>
@@ -707,7 +707,7 @@ function HomePage() {
 
       {/* feature banner */}
       <div className="w-[100%] bg-[#FFFFFF] flex justify-center pt-[50px] pb-[50px] px-[24px] vsm:px-[50px]">
-        <div className="w-[100%] max-w-[1280px] ">
+        <div className="w-[100%] max-w-container ">
           <div className="grid grid-cols-12 items-center gap-y-[20px] mlg:gap-[0px]">
             <div className="pe-[0px] py-[15px] border-r-0  vsm:pe-[30px] vsm:py-[0px] col-span-12 vsm:col-span-6 mlg:col-span-3 vsm:border-r border-black flex items-center gap-[20px] justify-center overflow-hidden" data-aos="flip-up" data-aos-duration="300">
               <img src="./assets/icons/reward.svg" className="w-[40px] h-[40px]" alt=""/>
@@ -743,28 +743,28 @@ function HomePage() {
 
 
       {/* get in touch today */}
-      <div className="w-[100%] grid grid-cols-12 bg-[#FFF9F4]">
+      <div className="w-[100%] grid grid-cols-12 bg-main">
         <div className='col-span-12 md:col-span-6 min-h-[300px] vsm:min-h-[450px]' style={{backgroundImage: "url('https://i.postimg.cc/G24RJxLS/new.avif')", backgroundAttachment: "fixed", backgroundRepeat: "no-repeat", backgroundPositionX:"-20px", backgroundOrigin:"content-box", backgroundSize:"cover"}}>
         </div>
 
         <div className="col-span-12 md:col-span-6">
           <div className="py-[70px] px-[30px] md:p-[70px]">
-            <div className="text-[32px] leading-[30px]">
+            <div className="text-heading leading-[30px]">
               Get In Touch Today!
             </div>
 
-            <div className='text-[13px] mt-[15px]'>
+            <div className='text-body mt-[15px]'>
               Cras convallis a augue non ullamcorper. Maecenas nec tempor nulla, nec semper mauris. In vitae urna justo. Quisque at nulla pellentesque.
             </div>
 
             <div className='mt-[30px] flex flex-col gap-[20px]'>
-              <input type="text" placeholder='Name' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-[13px] bg-[#F5E7D6]' />
-              <input type="text" placeholder='Phone Number' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-[13px] bg-[#F5E7D6]'/>
-              <input type='text' placeholder='Date' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-[13px] bg-[#F5E7D6]'/>
-              <textarea type="text" rows={5} placeholder='Message' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-[13px] bg-[#F5E7D6]'/> 
+              <input type="text" placeholder='Name' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-body bg-[#F5E7D6] outline-none cursor-text' />
+              <input type="text" placeholder='Phone Number' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-body bg-[#F5E7D6] outline-none cursor-text'/>
+              <input type='text' placeholder='Date' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-body bg-[#F5E7D6] outline-none cursor-text'/>
+              <textarea type="text" rows={5} placeholder='Message' name="" id="" className='w-[100%] px-[15px] py-[10px] placeholder:text-body bg-[#F5E7D6] outline-none cursor-text'/> 
             </div>
             
-            <div className="mt-[20px] vsm:max-w-[190px] flex justify-center vsm:justify-start items-center gap-2 bg-black py-[13px] px-[30px]">
+            <div className="mt-[20px] vsm:max-w-[190px] flex justify-center vsm:justify-start items-center gap-2 bg-black py-[13px] px-[30px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
               <button className=" text-[14px] text-white">
                 Send Message
               </button>
@@ -779,8 +779,8 @@ function HomePage() {
 
 
       {/* footer */}
-      <div className='w-[100%] flex justify-center bg-[#0E343D]'>
-        <div className='footer w-[100%] max-w-[1280px] pt-[50px] sm:pt-[80px] mx-[50px] text-white'>
+      <div className='w-[100%] flex justify-center bg-footer'>  
+        <div className='footer w-[100%] max-w-container pt-[50px] sm:pt-[80px] mx-[50px] text-white'>
             <div className='grid grid-cols-12 mb-[50px] gap-y-[50px] sm:gap-[50px]'>
               <div className='col-span-12 sm:col-span-5 mlg:col-span-3'>
                 <img src="./assets/logos/swarnaFooter.svg" className='w-[150px]' alt="" />
@@ -847,7 +847,7 @@ function HomePage() {
                   Join Today
                 </div> 
                 <div className='footer-input mt-[18px] relative w-[100%]'>
-                  <input type="text" className='ps-[23px] py-[14px] w-[100%] bg-transparent border border-white placeholder:text-[13px] rounded-full' placeholder='Enter Your Mail Id Here' name="" id="" />
+                  <input type="text" className='ps-[23px] py-[14px] w-[100%] bg-transparent border border-white placeholder:text-body rounded-full outline-none' placeholder='Enter Your Mail Id Here' name="" id="" />
                   <div className='absolute right-[7px] top-[7px] flex justify-center items-center bg-white px-[10px] py-[12px] rounded-full'>
                     <img src="./assets/shapes/send.svg" className='w-[20px]' alt="" />
                   </div>

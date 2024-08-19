@@ -16,29 +16,21 @@ module.exports = {
         '2xl': '1536px', // 2X Large
       },
       fontSize:{
-        'h1':'var(--text-h1)',
-        'h2':'var(--text-h2)',
-        'h3':'var(--text-h3)',
-        'h4':'var(--text-h4)',
-        'h6':'var(--text-h6)',
-        'h7':'var(--text-h7)',
-        'button':'var(--fs-button)',
-        'body':'var(--fs-body)'
-      },
-      lineHeight:{
-        'lh-h1':'var(--text-h1-lh)',
-        'lh-h3':'var(--text-h3-lh)',
-        'button-lh':'var(--fs-button-lh)',
-        'body-lh':'var(--fs-body-lh)',
+        'body':'13px',
+        'heading':'32px'
       },
       fontFamily:{
-        'marcellus':['var(--font-family-main)','system-ui']
+        'marcellus':['Marcellus','system-ui']
       },
       backgroundColor:{
-        'main':"var(--bg-main)",
-        'hero':"var(--bg-hero)"
+        'main':"#FFF9F4",
+        'sub':'rgb(246,241,235)',
+        'hero':"rgb(221, 184, 146)",
+        'footer':"rgb(14, 52, 61)"
       },
-
+      maxWidth:{
+        'container':'1280px'
+      }
     },
   },
   plugins: [],
