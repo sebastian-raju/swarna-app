@@ -49,13 +49,36 @@
   min-height: 450px;
 }
 
+@media(max-width:480px){
+  .get-touch-container{
+    background-position-x: -160px;
+  }
+  .pro-card .main-img{
+    height: 180px;
+  }
+  .pro-card:hover .main-img{
+    cursor: pointer;
+    height: 140px;
+  }
+}
+
 @media(max-width:400px){
   .get-touch-container{
-    background-position-x: -70px;
+    background-position-x: -160px;
   }
   .trendy-collection-container{
     background-position-y: -150px;
     background-position-x: -100px;
     min-height: 400px;
+  }
+}
+
+@media(max-width:380px){
+  .pro-card .main-img{
+    height: 150px;
+  }
+  .pro-card:hover .main-img{
+    cursor: pointer;
+    height: 110px;
   }
 }

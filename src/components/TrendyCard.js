@@ -11,7 +11,7 @@ function TrendyCard({product}) {
 
   return (
     <>
-      <div className="w-[287px] flex flex-col flex-shrink-0 items-start" data-aos="fade-left" data-aos-duration="1000">
+      <div className="w-[270px] flex flex-col flex-shrink-0 items-start" data-aos="fade-left" data-aos-duration="1000">
         <img src={image} className="h-[320px] w-[100%] object-cover" alt=""/>
         <div className="w-[100%] flex justify-between items-end mt-[20px]">
           <div className=" text-[13px] text-[#868686] uppercase" style={{letterSpacing: "7px", lineHeight: "13px"}}>{category}</div>

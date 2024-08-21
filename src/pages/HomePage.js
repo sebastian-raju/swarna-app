@@ -55,9 +55,9 @@ function HomePage() {
         islargeScreen === false &&
         <div className="fixed bottom-[5px] left-[5px] right-[5px] bg-black z-50 rounded-md">
             <div className='grid grid-cols-12 p-1 items-center'>
-              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded-lg'><img src="./assets/icons/iso_search.svg" alt="" /></div>
-              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded-lg'><img src="./assets/icons/whiteProfile.svg" alt="" /></div>
-              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded-lg'><img src="./assets/icons/whiteWishlist.svg" alt="" /></div>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/iso_search.svg" alt="" /></div>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/whiteProfile.svg" alt="" /></div>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/whiteWishlist.svg" alt="" /></div>
             </div>
         </div>
       }
@@ -117,7 +117,7 @@ function HomePage() {
                       <div className='text-body block mlg:hidden'>Search</div>
                     </div> */}
                     <div className="nav-item flex items-center cursor-pointer gap-[15px]">
-                      <img src="./assets/icons/profile.svg" className='w-[15px] h-[16px]' alt="" />
+                      <img src="./assets/icons/profile.svg" className='w-[15px] h-[15px]' alt="" />
                       <div className='text-body block mlg:hidden'>Profile</div>
                     </div>
                     <div className="nav-item flex items-center cursor-pointer gap-[15px]">
@@ -125,7 +125,7 @@ function HomePage() {
                       <div className='text-body block mlg:hidden'>Wishlist</div>
                     </div>
                     <div className="nav-item">
-                      <button className='px-4 py-[13px] bg-[#AC805D] text-white text-[14px] hover:bg-[#8d613b] transition-all delay-[30ms]'>Get Special Offers</button>
+                      <button className='px-4 py-[13px] bg-[rgb(172,128,93)] text-white text-[14px] hover:bg-[#8d613b] transition-all delay-[30ms]'>Get Special Offers</button>
                     </div>
                 </div>
               </div>
@@ -137,7 +137,7 @@ function HomePage() {
 
       {/* hero section */}
     <div className='bg-hero'>
-      <div className=" py-[30px] w-[100%] hidden mlg:flex justify-center gap-[40px] item-center">
+      <div className=" py-[30px] w-[100%] hidden mlg:flex justify-center gap-[35px] vsm:gap-[40px] item-center">
         <div className="dropdown">
           <button className="btn dropdown-toggle border-0" type="button" style={{fontSize: "14px"}} data-bs-toggle="dropdown" aria-expanded="false">
             Home
@@ -202,7 +202,7 @@ function HomePage() {
       </div>
   
   
-      <div className="main-hero-section px-[30px] vsm:px-[50px] pb-[50px] pt-[50px] vsm:pt-[70px] mlg:pt-[30px] w-[100%] flex flex-col items-center justify-center relative">
+      <div className="main-hero-section px-[20px] vsm:px-[50px] pb-[50px] pt-[50px] vsm:pt-[70px] mlg:pt-[30px] w-[100%] flex flex-col items-center justify-center relative">
         <div className="w-[100%] max-w-container grid grid-cols-12 items-center">
           <div className="col-span-12 mlg:col-span-8 translate-y-[-10px]">
             <div className="w-[100%] grid grid-cols-12 items-end gap-[25px] md:gap-[50px] overflow-hidden">
@@ -271,7 +271,7 @@ function HomePage() {
 
     {/* our selection of jewellery */}
 
-    <div className="w-[100%] px-[50px] flex justify-center items-center flex-col bg-main">
+    <div className="w-[100%] px-[30px] vsm:px-[50px] flex justify-center items-center flex-col bg-main">
       <div className="w-[100%] max-w-container mt-[100px]">
         <div className="selection-subheading text-[11px]" style={{letterSpacing:"5px"}}>
           OUR CATEGORIES WORK
@@ -413,7 +413,7 @@ function HomePage() {
 
     {/* our recent products */}
       <div className="w-[100%] flex justify-center pb-[80px] bg-sub">
-        <div className="w-[100%] max-w-container grid grid-cols-12 pt-[100px] items-center mx-[50px]">
+        <div className="w-[100%] max-w-container grid grid-cols-12 pt-[100px] items-center mx-[30px] vsm:mx-[50px]">
           <div className="col-span-12 mlg:col-span-7 flex flex-col items-start  py-[0px] pe-[0px] mlg:py-[40px] mlg:pe-[40px] ">
             <div className="selection-subheading text-[11px]" style={{letterSpacing:"5px"}}>
               OUR RECENT PRODUCTS
@@ -455,7 +455,7 @@ function HomePage() {
 
 
       {/* hidden background image attachment */}
-      <div className='image-container block mlg:hidden' style={{backgroundImage: "url('https://i.postimg.cc/qB9rmx1w/wallpaperflare-com-wallpaper-1.jpg')", height:"400px", width: "100%", backgroundRepeat:"no-repeat", backgroundAttachment: "fixed", backgroundPosition: "center"}}>
+      <div className='image-container block mlg:hidden' style={{backgroundImage: "url('https://i.postimg.cc/qB9rmx1w/wallpaperflare-com-wallpaper-1.jpg')", height:"350px", width: "100%", backgroundRepeat:"no-repeat", backgroundAttachment: "fixed", backgroundPosition: "center"}}>
       </div>
 
 
@@ -513,7 +513,7 @@ function HomePage() {
             <button className="w-[100%] max-w-[300px] text-[11px] vsm:text-body border border-black py-2 flex justify-center text-center items-center antique button" onClick={()=>{toggleButton(".antique")}}>Antique Jewels</button>
           </div>
 
-          <div className="grid grid-cols-12 gap-y-[60px] gap-[28px] mt-[50px] vsm:mt-[80px] w-[100%]">
+          <div className="flex flex-nowrap overflow-x-scroll gold-collection-container pb-[40px] vsm:grid vsm:grid-cols-12 gap-y-[60px] gap-[28px] mt-[50px] vsm:mt-[80px] w-[100%]">
             {/* <!-- card-container --> */}
 
             { productList.length > 0 ? 
@@ -533,7 +533,7 @@ function HomePage() {
 
           </div>
 
-          <div className="w-[100%] flex justify-center mt-[50px]">
+          <div className="w-[100%] flex justify-center mt-[30px]">
             <div className="mt-[20px] flex items-center gap-2 bg-black py-[13px] px-[30px] cursor-pointer hover:bg-slate-800 transition-all delay-[30ms]">
               <button className=" text-[14px] text-white">
                 View All Products
@@ -553,7 +553,7 @@ function HomePage() {
         </div>
 
         <div className="col-span-12 md:col-span-6">
-          <div className="p-[30px] pt-[70px] pb-[70px] md:p-[70px]">
+          <div className="p-[24px] vsm:p-[30px] pt-[70px] pb-[70px] md:p-[70px]">
             <div className="selection-subheading text-[11px] mb-[15px]" style={{letterSpacing: "5px"}}>
               OUR RECENT PRODUCTS
             </div>
@@ -584,8 +584,8 @@ function HomePage() {
           <div className="text-body text-center" style={{letterSpacing: "7px"}}>OUR TEAM MEMBERS</div>
           <div className="text-heading text-center mt-[5px]">Our Professional Team</div>
 
-          <div className="mt-[70px] grid grid-cols-12 gap-y-[50px] gap-[28px]">
-            <div className="col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 pro-card">
+          <div className="mt-[70px] grid grid-cols-12 gap-y-[20px] vsm:gap-y-[50px] gap-[20px] vsm:gap-[28px]">
+            <div className="col-span-6 md:col-span-4 lg:col-span-3 pro-card">
               <img src="https://i.postimg.cc/4x1FC0Mb/person1.jpg" className="w-[100%] object-cover main-img" alt=""/>
               <div className="mt-[20px] w-[100%] flex flex-col items-center">
                 <div className="text-[17px]">Dr. Nisha Koshi</div>
@@ -599,7 +599,7 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 pro-card">
+            <div className="col-span-6 md:col-span-4 lg:col-span-3 pro-card">
               <img src="https://i.postimg.cc/pdGGrFPm/person2.jpg" className=" w-[100%] object-cover main-img" alt=""/>
               <div className="mt-[20px] w-[100%] flex flex-col items-center">
                 <div className="text-[17px]">Dr . Marikasano</div>
@@ -613,7 +613,7 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 pro-card">
+            <div className="col-span-6 md:col-span-4 lg:col-span-3 pro-card">
               <img src="https://i.postimg.cc/0jmcVXDS/person3.jpg" className=" w-[100%] object-cover main-img" alt=""/>
               <div className="mt-[20px] w-[100%] flex flex-col items-center">
                 <div className="text-[17px]">Dr . Enrichana</div>
@@ -627,7 +627,7 @@ function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="col-span-12 vsm:col-span-6 md:col-span-4 lg:col-span-3 pro-card">
+            <div className="col-span-6 md:col-span-4 lg:col-span-3 pro-card">
               <img src="https://i.postimg.cc/gj9KLyQ2/person4.jpg" className=" w-[100%] object-cover main-img" alt=""/>
               <div className="mt-[20px] w-[100%] flex flex-col items-center">
                 <div className="text-[17px]">Dr . Nainikka</div>
@@ -846,7 +846,7 @@ function HomePage() {
         </div>
 
         <div className="col-span-12 md:col-span-6 bg-opacity-35 bg-zinc-900 backdrop-filter backdrop-blur-[5px]">
-          <div className="py-[70px] px-[30px] md:p-[70px] text-white">
+          <div className="py-[70px] px-[24px] md:p-[70px] text-white">
             <div className="text-heading leading-[30px]  ">
               Get In Touch Today!
             </div>
@@ -878,7 +878,7 @@ function HomePage() {
 
       {/* footer */}
       <div className='w-[100%] flex justify-center bg-footer'>  
-        <div className='footer w-[100%] max-w-container pt-[50px] sm:pt-[80px] mx-[50px] text-white'>
+        <div className='footer w-[100%] max-w-container pt-[50px] sm:pt-[80px] mx-[30px] vsm:mx-[50px] text-white'>
             <div className='grid grid-cols-12 mb-[50px] gap-y-[50px] sm:gap-[50px]'>
               <div className='col-span-12 sm:col-span-5 mlg:col-span-3'>
                 <img src="./assets/logos/swarnaFooter.svg" className='w-[150px]' alt="" />
