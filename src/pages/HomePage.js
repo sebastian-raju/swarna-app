@@ -55,9 +55,9 @@ function HomePage() {
         islargeScreen === false &&
         <div className="fixed bottom-[5px] left-[5px] right-[5px] bg-black z-50 rounded-md">
             <div className='grid grid-cols-12 p-1 items-center'>
-              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/iso_search.svg" alt="" /></div>
-              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/whiteProfile.svg" alt="" /></div>
-              <div className='text-white col-span-4 w-[100%] flex justify-center p-4 rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/whiteWishlist.svg" alt="" /></div>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-[32px] rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/iso_search.svg" alt="" /></div>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-[32px] rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/whiteProfile.svg" alt="" /></div>
+              <div className='text-white col-span-4 w-[100%] flex justify-center p-[32px] rounded hover:bg-[rgb(172,128,93)]'><img src="./assets/icons/whiteWishlist.svg" alt="" /></div>
             </div>
         </div>
       }
