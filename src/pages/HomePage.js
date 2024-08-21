@@ -202,7 +202,7 @@ function HomePage() {
       </div>
   
   
-      <div className="main-hero-section px-[20px] sm:px-[50px] pb-[50px] pt-[50px] vsm:pt-[70px] mlg:pt-[30px] w-[100%] flex flex-col items-center justify-center relative">
+      <div className="main-hero-section px-[20px] esm:px-[40px] sm:px-[50px] pb-[50px] pt-[50px] vsm:pt-[70px] mlg:pt-[30px] w-[100%] flex flex-col items-center justify-center relative">
         <div className="w-[100%] max-w-container grid grid-cols-12 items-center">
           <div className="col-span-12 mlg:col-span-8 translate-y-[-10px]">
             <div className="w-[100%] grid grid-cols-12 items-end gap-[25px] md:gap-[50px] overflow-hidden">

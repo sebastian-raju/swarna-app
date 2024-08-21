@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'sm': '380px',     // Very Small
+        'esm': '380px',     // Very Small
         'vsm': '480px',   // Extra Small
         'sm': '640px',   // Small
         'md': '768px',   // Medium
