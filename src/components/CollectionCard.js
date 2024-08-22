@@ -11,7 +11,7 @@ function CollectionCard({product}) {
 
   return (
     <>
-      <div className="flex-shrink-0 vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start collection-card relative" data-aos="zoom-in" data-aos-duration="1000">
+      <div className="flex-shrink-0 vsm:flex-none vsm:col-span-6 md:col-span-4 lg:col-span-3 flex flex-col items-start collection-card relative" data-aos="zoom-in" data-aos-duration="1000">
         <img src={image} className="h-[350px] w-[290px] vsm:w-[100%] object-cover" alt=""/>
         <div className="w-[100%] flex justify-between items-end mt-[20px]">
           <div className=" text-[13px] text-[#868686] uppercase" style={{letterSpacing:"7px",lineHeight:"13px"}}>{category}</div>

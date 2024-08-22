@@ -167,6 +167,12 @@
 }
 
 
+@media(min-width:480px){
+  .gold-collection-container::-webkit-scrollbar {
+    display:none
+  }
+}
+
 
 
 
