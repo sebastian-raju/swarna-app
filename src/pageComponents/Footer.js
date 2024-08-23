@@ -11,7 +11,7 @@ function Footer() {
   return (
     <>
      <div className='w-[100%] flex justify-center bg-footer'>  
-        <div className='footer w-[100%] max-w-container pt-[50px] sm:pt-[80px] mx-[30px] vsm:mx-[50px] text-white'>
+        <div className='footer w-[100%] max-w-container pt-[50px] sm:pt-[70px] mx-[30px] vsm:mx-[50px] text-white'>
             <div className='grid grid-cols-12 mb-[50px] gap-y-[50px] sm:gap-[50px]'>
               <div className='col-span-12 sm:col-span-5 mlg:col-span-3'>
                 <img src="./assets/logos/swarnaFooter.svg" className='w-[150px]' alt="" />

@@ -9,17 +9,17 @@ function News() {
 
   return (
     <>
-      <div className="w-[100%] flex flex-col items-center px-[24px] sm:px-[50px] pt-[100px] pb-[120px] bg-sub">
+      <div className="w-[100%] flex flex-col items-center px-[24px] sm:px-[50px] pt-[70px] pb-[70px] bg-sub">
         <div className="w-[100%] max-w-container">
           <div className="text-[10px] mb-[15px]" style={{letterSpacing:"5px"}}>NEWS UPDATES</div>
           <div className="w-[100%] grid grid-cols-12 items-center gap-[20px]">
-            <div className="col-span-12 md:col-span-7">
+            <div className="col-span-12 md:col-span-4">
               <div className="text-heading w-[100%] md:max-w-[350px] leading-[40px]">
                 Recent News  & Blogs 
                 Updates
               </div> 
             </div>
-            <div className="col-span-12 md:col-span-5 text-body">
+            <div className="col-span-12 md:col-span-8 text-body">
               It is a long established fact that a reader will be distracted by the readable content of a page when looking at its 
               layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to 
               using 'Content here, content here', making it look like readable English. Many desktop publishing packages

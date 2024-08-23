@@ -9,7 +9,7 @@ function TrendyCollection({trendyProducts}) {
         </div>
 
         <div className="col-span-12 md:col-span-6">
-          <div className="p-[24px] vsm:p-[30px] pt-[70px] pb-[70px] md:p-[70px]">
+          <div className="p-[24px] vsm:p-[30px] vsm:pt-[70px] vsm:pb-[70px]">
             <div className="selection-subheading text-[11px] mb-[15px]" style={{letterSpacing: "5px"}}>
               OUR RECENT PRODUCTS
             </div>

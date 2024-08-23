@@ -49,6 +49,19 @@
   min-height: 450px;
 }
 
+.drpdwn{
+  background-color: white;
+  transition: all 0.1s ease-in-out;
+}
+
+.drpdwn:hover{
+  background-color: rgb(250, 237, 225);
+}
+
+.pointer{
+  rotate: 45deg !important;
+}
+
 @media(max-width:480px){
   .get-touch-container{
     background-position-x: -160px;

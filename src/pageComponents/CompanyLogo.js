@@ -11,7 +11,7 @@ function CompanyLogo() {
     <>
       <div className="w-[100%] vsm:px-[50px] flex justify-center items-center bg-main">
       <div  className="w-[100%] vsm:max-w-container overflow-hidden" >
-        <div className="companies-row w-[100%] max-w-container mt-[70px] overflow-hidden select-none mb-[70px]" data-aos="fade-right" data-aos-duration="1000">
+        <div className="companies-row w-[100%] max-w-container mt-[60px] overflow-hidden select-none mb-[60px]" data-aos="fade-right" data-aos-duration="1000">
             <Marquee speed={100} className=''>
               <div>
                 <img src="./assets/logos/maskan.svg" className="w-[135px] me-[110px]" alt=""/>

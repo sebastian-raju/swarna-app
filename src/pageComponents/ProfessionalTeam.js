@@ -3,7 +3,7 @@ import React from 'react'
 function ProfessionalTeam() {
   return (
     <>
-      <div className="w-[100%] flex flex-col items-center px-[24px] sm:px-[50px] pt-[100px] pb-[120px] bg-main">
+      <div className="w-[100%] flex flex-col items-center px-[24px] sm:px-[50px] pt-[70px] pb-[60px] bg-main">
         <div className="w-[100%] max-w-container">
           <div className="text-body text-center" style={{letterSpacing: "7px"}}>OUR TEAM MEMBERS</div>
           <div className="text-heading text-center mt-[5px]">Our Professional Team</div>

@@ -24,7 +24,7 @@ function HomePage() {
 
   const [productList, setProductList] = useState([]);
   const [trendyProducts, setTrendyProducts] = useState([]);
-  const islargeScreen = useMediaQuery('(min-width:500px)'); 
+  const islargeScreen = useMediaQuery('(min-width:500px)');
 
   useEffect(()=>{
     Aos.init();
@@ -81,11 +81,6 @@ function HomePage() {
       <CompanyLogo/>
       <Features/>
       <RecentProducts/>
-
-      {/* hidden background image attachment */}
-      <div className='image-container block mlg:hidden' style={{backgroundImage: "url('https://i.postimg.cc/qB9rmx1w/wallpaperflare-com-wallpaper-1.jpg')", height:"350px", width: "100%", backgroundRepeat:"no-repeat", backgroundAttachment: "fixed", backgroundPosition: "center"}}>
-      </div>
-
       <ShoppingBanner/>
       <JewelCollection productList={productList} toggleButton={toggleButton}/> 
       <TrendyCollection trendyProducts={trendyProducts}/>

@@ -1,11 +1,28 @@
 import Aos from 'aos';
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 function Hero() {
+
+  const [dropShow, setDropShow] = useState(false);
 
   useEffect(()=>{
     Aos.init();
    },[]);
+
+   let menuRef = useRef();
+
+   useEffect(()=>{
+    let handler = (event) => {
+      if(!menuRef.current.contains(event.target)){
+        setDropShow(false);
+      }
+    }
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    }
+   },[])
 
   return (
     <>
@@ -23,16 +40,64 @@ function Hero() {
           </ul>
         </div>
   
-        <div className="dropdown">
+        {/* <div className="dropdown">
           <button className="btn dropdown-toggle border-0" type="button" style={{fontSize: "14px"}} data-bs-toggle="dropdown" aria-expanded="false">
             Collection
           </button>
-          <ul className="dropdown-menu">
+          <ul className="dropdown-menu" style={{width:"100%"}}>
             <li><a className="dropdown-item" href="#home">Action</a></li>
             <li><a className="dropdown-item" href="#home">Another action</a></li>
             <li><a className="dropdown-item" href="#home">Something else here</a></li>
           </ul>
+        </div> */}
+
+        <div className='' ref={menuRef}>
+          <div className='relative'>
+            <div className='text-[14px] px-[12px] py-[6px] cursor-pointer flex items-center gap-[5px]' onClick={()=>{setDropShow(prev => !prev)}}>Collection<span className=''><img src="./assets/shapes/drop-down-arrow.png" className='w-[7px] h-[7px]' alt="" /></span></div>
+            { dropShow &&
+              <div className='absolute h-[20px] w-[20px] bg-white top-[34px] left-[33px] pointer' data-aos="zoom-out" data-aos-duration="500"></div>
+            }
+          </div>
+         
+          {
+            dropShow &&
+            <div className='absolute top-[200px] left-[21%] xl:left-[27%] right-[10px] bg-white text-[13px] z-[3] rounded-lg p-2 cursor-pointer shadow-md' data-aos="fade-right" data-aos-duration="100">
+           <div className='grid grid-cols-12 gap-[20px]'>
+              <div className='col-span-3'>
+                <div className=' w-[100%] text-black text-[15px] font-semibold drpdwn py-3 px-3 rounded-md'>Home Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Bridal Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Antique Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Special Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Other Collections</div>
+              </div>
+
+              <div className='col-span-3'>
+                <div className=' w-[100%] text-black text-[15px] font-semibold drpdwn py-3 px-3 rounded-md'>Bridal Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Bridal Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Antique Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Special Collections</div>
+                
+              </div>
+
+              <div className='col-span-3'>
+                <div className=' w-[100%] text-black text-[15px] font-semibold drpdwn py-3 px-3 rounded-md'>Antique Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Bridal Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Antique Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Special Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Other Collections</div>
+              </div>
+
+              <div className='col-span-3'>
+                <div className=' w-[100%] text-black text-[15px] font-semibold drpdwn py-3 px-3 rounded-md'>Special Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Bridal Collections</div>
+                <div className='w-[100%] text-black text-[13px] drpdwn py-3 px-3 rounded-md'>Antique Collections</div>
+               
+              </div>
+           </div>
+            </div>
+          }
         </div>
+       
   
         <div className="dropdown">
           <button className="btn dropdown-toggle border-0" type="button" style={{fontSize: "14px"}} data-bs-toggle="dropdown" aria-expanded="false">
@@ -82,7 +147,7 @@ function Hero() {
 
       {/* first carousel item */}
       <div class="carousel-item active">
-          <div className="main-hero-section px-[20px] esm:px-[40px] sm:px-[50px] pt-[50px] pb-[60px] mlg:pb-[30px] vsm:pt-[70px] mlg:pt-[30px] w-[100%] flex flex-col items-center justify-center relative bg-hero h-[680px] vsm:h-[600px]">
+          <div className="main-hero-section px-[20px] esm:px-[40px] sm:px-[50px] pt-[50px] pb-[60px] mlg:pb-[30px] vsm:pt-[70px] mlg:pt-[0px] w-[100%] flex flex-col items-center justify-center relative bg-hero h-[680px] vsm:h-[580px]">
             <div className="w-[100%] max-w-container grid grid-cols-12 items-center">
     
             <div className="col-span-12 mlg:col-span-8 translate-y-[-10px]">
@@ -149,7 +214,7 @@ function Hero() {
 
         {/* second carousel item */}
         <div class="carousel-item ">
-          <div className="main-hero-section px-[20px] esm:px-[40px] sm:px-[50px] pt-[50px] pb-[60px] mlg:pb-[88px] vsm:pt-[70px] mlg:pt-[50px] w-[100%] flex flex-col items-center justify-center relative bg-hero h-[680px] vsm:h-[600px]">
+          <div className="main-hero-section px-[20px] esm:px-[40px] sm:px-[50px] pt-[50px] pb-[60px] mlg:pb-[88px] vsm:pt-[70px] mlg:pt-[20px] w-[100%] flex flex-col items-center justify-center relative bg-hero h-[680px] vsm:h-[580px]">
             <div className="w-[100%] max-w-container grid grid-cols-12 items-center gap-y-[30px] md:gap-[50px]">
     
             <div className='col-span-12 md:col-span-5'>

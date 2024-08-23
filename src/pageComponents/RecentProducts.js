@@ -10,8 +10,8 @@ function RecentProducts() {
   return (
     <>
      {/* our recent products */}
-     <div className="w-[100%] flex justify-center pb-[80px] bg-sub">
-        <div className="w-[100%] max-w-container grid grid-cols-12 pt-[100px] items-center mx-[30px] vsm:mx-[50px]">
+     <div className="w-[100%] flex justify-center pb-[70px] bg-sub">
+        <div className="w-[100%] max-w-container grid grid-cols-12 pt-[70px] items-center mx-[30px] vsm:mx-[50px]">
           <div className="col-span-12 mlg:col-span-7 flex flex-col items-start  py-[0px] pe-[0px] mlg:py-[40px] mlg:pe-[40px] ">
             <div className="selection-subheading text-[11px]" style={{letterSpacing:"5px"}}>
               OUR RECENT PRODUCTS

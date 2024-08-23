@@ -30,7 +30,7 @@ function JewelCollection({productList, toggleButton}) {
 
   return (
     <>
-       <div className="w-[100%] flex flex-col items-center pt-[120px] bg-main pb-[120px]">
+       <div className="w-[100%] flex flex-col items-center pt-[70px] bg-main pb-[70px]">
         <div className="w-[100%] max-w-container px-6 flex flex-col items-center">
           <div className="text-body text-center" style={{letterSpacing: "7px"}}>NEW JEWELLERY</div>
           <div className="text-[28px] vsm:text-heading text-center mt-[5px]">Gold & Diamond Jewel Collection</div>
